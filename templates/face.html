@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>识别结果</title>
+    </head>
+
+    <body>
+
+    <script>
+    function find(){
+        var test=document.getElementById("face").src;
+        window.alert(test);
+    }
+    function update(){
+        window.location.href="/uploadImg2"
+    }
+    </script>
+
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="img2">
+        <input type="submit" value="上传图片">
+        <td>{{ flag}}</td>
+        <input type="button" value="更新" onclick="update()">
+    </form>
+
+    {% load staticfiles %}
+    {% for item in imgs2 %}
+{#        <td>{%   item.img_url %}</td>#}
+        <img width=200 height=260 src="{%static ''%}{{ item.img_url }}">
+    {% endfor %}
+
+    </body>
+
+</html>

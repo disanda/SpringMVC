@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>识别结果</title>
+</head>
+<body>
+    {% load staticfiles %}
+    {% for item in imgs %}
+{#        <td>{%   item.img_url %}</td>#}
+        <img width=200 height=260 src="{%static ''%}{{ item }}">
+    {% endfor %}
+{#        <img src="{%static "picF1/zhj1.jpeg"%}">#}
+</body>
+</html>
